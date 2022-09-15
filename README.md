@@ -6,7 +6,7 @@
 [EasySK](https://youtu.be/YPdo1v_t0hY)
 # 💻개발계획서
 [EasySK](https://drive.google.com/file/d/1KTtF1Fbjftm7PYZ7aQ4_D9JdfziXbCGU/view?usp=sharing)
-# 팀 소개
+# ⭐️팀 소개
 1. 민경서
 * ROLE: Frontend, Backend
 * github: @gyeongseoMin
