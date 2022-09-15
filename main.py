@@ -48,7 +48,7 @@ class voiceloop(threading.Thread):
                 if (max(agec) == agec[2]):
                     speak("어르신분들 추천 메뉴로는 라떼를 추천합니다.", a)
                     a = a + 1
-            if "아메리카노" == tmpli[-1]:
+            elif "아메리카노" == tmpli[-1]:
                 print("아메리카노")
 
                 speak("아이스로 하시겠습니까? 뜨거운걸로 하시겠습니까?",a)
@@ -73,6 +73,7 @@ class voiceloop(threading.Thread):
                     if "예" ==tmpli[-1]:
                         speak("요금 {0}원 결제 도와드리겠습니다.".format(cost), a)
                         a = a + 1
+                        on_closing()
                     elif "아니오" ==tmpli[-1]:
                         continue
                 elif "뜨거운거" ==tmpli[-1]:
@@ -303,7 +304,6 @@ while cv2.waitKey(1)<0:
         if(count >10):
             print('detect')
             speak("무엇을 주문하시겠습니까",0)
-
             root = Tk()
             root.title("Voice Collector")
             root.geometry("200x200+50+50")
@@ -318,11 +318,8 @@ while cv2.waitKey(1)<0:
             myThread = voiceloop()
             myThread.rflag = True
             myThread.start()
-
-
             root.protocol("WM_DELETE_WINDOW", on_closing)
             root.wm_attributes("-topmost", 1)
             root.mainloop()
-
 
 
